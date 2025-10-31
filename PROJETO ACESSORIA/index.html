@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Projeto Limite do Visível</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container login-container">
+        <h2>Projeto Limite do Visível</h2>
+        <p>Acesse sua conta para continuar.</p>
+        
+        <form id="login-form">
+            <div class="form-group">
+                <label for="user-type">Tipo de Usuário:</label>
+                <select id="user-type" required>
+                    <option value="aluno">Aluno</option>
+                    <option value="professor">Professor</option>
+                    <option value="admin">Administrador (Assessoria)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="username">Usuário (simulado):</label>
+                <input type="text" id="username" placeholder="Digite seu nome de usuário" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha (simulada):</label>
+                <input type="password" id="password" placeholder="Qualquer senha" required>
+            </div>
+            
+            <button type="submit" class="btn">Entrar</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

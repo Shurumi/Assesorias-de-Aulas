@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Projeto Limite do Visível</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Projeto Limite do Visível</h1>
+            <div class="user-info">
+                Olá, <span id="username-display"></span>!
+                <button id="logout-btn" class="btn btn-secondary">Sair</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <div id="admin-panel" class="dashboard-panel" style="display: none;">
+            <h2>Painel da Assessoria</h2>
+            
+            <section class="card">
+                <h3>Gerenciar Professores</h3>
+                <form id="admin-form-prof">
+                    <div class="form-group">
+                        <label for="prof-nome">Nome do Professor:</label>
+                        <input type="text" id="prof-nome" required>
+                    </div>
+                    <button type="submit" class="btn">Cadastrar Professor</button>
+                </form>
+                <ul id="admin-list-prof" class="item-list"></ul>
+            </section>
+            
+            <section class="card">
+                <h3>Gerenciar Disciplinas</h3>
+                <form id="admin-form-disc">
+                    <div class="form-group">
+                        <label for="disc-nome">Nome da Disciplina:</label>
+                        <input type="text" id="disc-nome" required>
+                    </div>
+                    <button type="submit" class="btn">Cadastrar Disciplina</button>
+                </form>
+                <ul id="admin-list-disc" class="item-list"></ul>
+            </section>
+        </div>
+
+        <div id="professor-panel" class="dashboard-panel" style="display: none;">
+            <h2>Painel do Professor</h2>
+
+            <section class="card">
+                <h3>Cadastrar Horários Disponíveis</h3>
+                <form id="prof-form-horarios">
+                    <div class="form-group">
+                        <label for="prof-disciplina">Minha Disciplina:</label>
+                        <select id="prof-disciplina" required></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="prof-data">Data:</label>
+                        <input type="date" id="prof-data" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prof-hora">Hora (ex: 14:00):</label>
+                        <input type="time" id="prof-hora" required>
+                    </div>
+                    <button type="submit" class="btn">Disponibilizar Horário</button>
+                </form>
+            </section>
+            
+            <section class="card">
+                <h3>Meus Horários Disponíveis</h3>
+                <ul id="prof-list-horarios" class="item-list"></ul>
+            </section>
+        </div>
+
+        <div id="aluno-panel" class="dashboard-panel" style="display: none;">
+            <h2>Buscar Aulas</h2>
+
+            <section class="card">
+                <h3>Encontrar Professores</h3>
+                <div class="form-group">
+                    <label for="aluno-filtro-disc">Filtrar por Disciplina:</label>
+                    <select id="aluno-filtro-disc">
+                        <option value="todas">Todas as Disciplinas</option>
+                        </select>
+                </div>
+            </section>
+            
+            <section class="card">
+                <h3>Horários Disponíveis</h3>
+                <div id="aluno-list-horarios">
+                    <p>Nenhum horário disponível encontrado.</p>
+                </div>
+            </section>
+        </div>
+
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html>
